@@ -1,8 +1,6 @@
-import express from "express";
-import { TweetIndex } from "../api/tweets_index.js";
-
 const express = require("express");
 const os = require("os");
+const Twitter = require("./twitter_index");
 
 const app = express();
 
@@ -15,4 +13,4 @@ app.listen(process.env.PORT || 8080, () =>
   console.log(`Listening on port ${process.env.PORT || 8080}!`)
 );
 
-app.use("/tweets", TweetIndex);
+app.use("/twitter", Twitter.TwitterIndex);
