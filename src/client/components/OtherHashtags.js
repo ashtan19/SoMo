@@ -15,6 +15,23 @@ const hashtags = [
   "#farmerprotests",
   "#pipelineprotests",
   "#healthcare",
+  "#DebatePresidencial2021",
+  "cleanwater",
+  "#BringBackOurGirls",
+  "#HeforShe",
+  "#IceBucketChallenge",
+  "#OscarsSoWhite",
+  "#MeToo",
+  "#NeverAgain",
+  "#Washington",
+  "#blackout",
+  "#HongKong",
+  "#BidenVsTrump",
+  "#FreeBritney",
+  "#DressLikeAWoman",
+  "#StopFundingHate",
+  "#YouAintNoMuslimBruv",
+  "#WomensMarch"
 ];
 
 function scrollToTop() {

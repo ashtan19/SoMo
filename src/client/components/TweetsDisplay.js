@@ -13,17 +13,24 @@ export const TweetsDisplay = ({ tweets }) => {
     setFeed(tweets);
   }, [tweets]);
 
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+
   const presentTweets = () => {
     console.log("feed: ", feed);
-    return feed.slice(0, 10).map((tweet) => {
-      console.log(tweet.id);
-      return (
-        <TwitterTweetEmbed
-          key={tweet.id}
-          tweetId={tweet.id.toString()}
-        ></TwitterTweetEmbed>
-      );
-    });
+    return feed
+      .slice(0, 10)
+      .filter(onlyUnique)
+      .map((tweet) => {
+        console.log(tweet.id);
+        return (
+          <TwitterTweetEmbed
+            key={tweet.id}
+            tweetId={tweet.id.toString()}
+          ></TwitterTweetEmbed>
+        );
+      });
   };
   return (
     <div>

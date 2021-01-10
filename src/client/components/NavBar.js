@@ -36,8 +36,10 @@ export default class NavBar extends Component {
             allowClear
             onSearch={this.onSearch}
             style={{
+              float: "right",
               width: "35%",
-              marginLeft: "50%",
+              marginLeft: "58em",
+              marginRight: "4em",
             }}
           />
         </div>
