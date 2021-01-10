@@ -1,10 +1,10 @@
 <p align="center">
-<img src="src/client/images/PNG%20Somo%20Text%20Logo%20and%20Tagline.png" alt="logo" width="550"/>
+<img src="src/client/images/PNG_Somo_Text_Logo_and_Tagline_BLACK.png" alt="logo" width="550"/>
 </p>
 
 [![Build Status](https://travis-ci.org/crsandeep/simple-react-full-stack.svg?branch=master)](https://travis-ci.org/crsandeep/simple-react-full-stack)
 
-## A web platform for discovering social movements around the world
+# A web platform for discovering social movements around the world
 
 ## Introduction
 
