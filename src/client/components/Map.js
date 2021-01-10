@@ -53,7 +53,7 @@ export default class Map extends Component {
               ))
             }
           </Geographies>
-          {/* {markers.map(({ name, coordinates, markerOffset }) => (
+          {markers.map(({ name, coordinates, markerOffset }) => (
             <Marker key={name} coordinates={coordinates}>
               <g
                 fill="none"
@@ -73,8 +73,8 @@ export default class Map extends Component {
               >
                 {name}
               </text>
-            </Marker> */}
-          ))
+            </Marker>
+          ))}
         </ComposableMap>
       );
     };
