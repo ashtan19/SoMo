@@ -12,6 +12,10 @@ const backendBaseURL = axios.create({
   baseURL: "http://localhost:8080",
 });
 
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -49,7 +53,7 @@ export default class App extends Component {
   render() {
     if (!this.state.loading) {
       return (
-        <div style={{ paddingBottom: "20em" }}>
+        <div>
           <div>
             <NavBar getTweets={this.getTweets} />
           </div>
@@ -63,6 +67,13 @@ export default class App extends Component {
           <div>
             <OtherHashtags getTweets={this.getTweets} />
           </div>
+          <div
+            style={{
+              height: "15em",
+              backgroundColor: "#65DABE",
+              marginTop: "8em",
+            }}
+          />
         </div>
       );
     } else {

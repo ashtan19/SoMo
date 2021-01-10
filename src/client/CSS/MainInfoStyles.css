@@ -49,4 +49,5 @@
   border-radius: 20em;
   background-color: white;
   cursor: pointer;
+  transition: ease-in-out 250ms;
 }

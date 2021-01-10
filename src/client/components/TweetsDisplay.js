@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import "../CSS/TweetsDisplayStyles.css";
 import { TwitterTweetEmbed } from "react-twitter-embed";
+import fblogo from "../images/fb_logo.png";
+import twitterlogo from "../images/twitter_logo.png";
+import iglogo from "../images/ig_logo.png";
 
 export const TweetsDisplay = ({ tweets }) => {
   const [feed, setFeed] = useState(tweets);
@@ -22,5 +25,14 @@ export const TweetsDisplay = ({ tweets }) => {
       );
     });
   };
-  return <div className="tweets-container">{presentTweets()}</div>;
+  return (
+    <div>
+      <div className="social-media-links-container">
+        <img src={fblogo} className="social-media-logo" />
+        <img src={twitterlogo} className="social-media-logo" />
+        <img src={iglogo} className="social-media-logo" />
+      </div>
+      <div className="tweets-container">{presentTweets()}</div>
+    </div>
+  );
 };

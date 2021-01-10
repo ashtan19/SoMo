@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../CSS/NavBarStyles.css";
 import "antd/dist/antd.css";
+import teamlogo from "../images/PNG Somo Text Logo.png";
 
 import { Input } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
@@ -27,13 +28,14 @@ export default class NavBar extends Component {
     return (
       <div className="nav-bar-container">
         <div className="nav-bar-background">
+          <img src={teamlogo} className="team-logo" />
           <Search
             placeholder="search #hashtags"
             allowClear
             onSearch={this.onSearch}
             style={{
               width: "35%",
-              marginLeft: "63%",
+              marginLeft: "50%",
             }}
           />
         </div>

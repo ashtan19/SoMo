@@ -5,6 +5,7 @@
 
 .other-hashtag {
   font-size: 0.8em;
+  letter-spacing: 0.1em;
   border-style: solid;
   border-radius: 5em;
   border-color: #ff6a8e;
@@ -15,13 +16,14 @@
   padding-right: 0.7em;
   padding-left: 0.7em;
   cursor: pointer;
-  outline:none;
+  outline: none;
 }
 
 .other-hashtag:hover {
   border-color: #ff6a8e;
   background-color: white;
   color: #ff6a8e;
+  transition: ease-in-out 250ms;
 }
 
 .other-hashtags-container {

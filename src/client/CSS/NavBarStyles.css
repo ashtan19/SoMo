@@ -22,3 +22,10 @@
 .ant-input::placeholder {
   color: rgba(67, 174, 148, 0.5) !important;
 }
+
+.team-logo {
+  height: 5.5em;
+  width: auto;
+  margin-top: 0.5em;
+  margin-left: 2em;
+}
