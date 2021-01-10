@@ -19,15 +19,24 @@
 
 .learn-more-botton {
   font-family: "Roboto-Medium";
-  font-size: 0.65em;
-  letter-spacing: 0.08em;
+  font-size: 0.55em;
+  color: #5e5e5e;
   border-style: solid;
-  border-width: 1%;
-  border-radius: 15%;
+  border-width: 0.3em;
+  border-radius: 20em;
   border-color: #e5e5e5;
   background-color: #e5e5e5;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+}
+
+.learn-more-botton:hover {
+  border-color: #65dabe;
+  color: #65dabe;
+  border-style: solid;
+  border-width: 0.3em;
+  border-radius: 20em;
+  background-color: white;
 }

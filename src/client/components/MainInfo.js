@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/MainInfoStyles.css";
-import { Button } from "antd";
-import { ComposableMap, Geographies, Geography } from "react-simple-maps";
+import { Menu, Dropdown, Button } from "antd";
 
 const mainhashtag = "#BLM";
 const description =
