@@ -18,7 +18,9 @@ const suffix = (
 );
 
 export default class NavBar extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
 
   onSearch = (value) => {
     this.props.getTweets(value.replace("#", ""));
