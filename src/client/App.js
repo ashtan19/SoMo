@@ -57,7 +57,7 @@ export default class App extends Component {
           <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
         </div>
         <div>
-          <OtherHashtags />
+          <OtherHashtags getTweets={this.getTweets} />
         </div>
       </div>
     );
