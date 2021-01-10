@@ -7,18 +7,7 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
-// const NodeGeocoder = require('node-geocoder');
-
-// const options = {
-//   provider: 'opencage',
- 
-//   // Optional depending on the providers
-//   fetch: customFetchImplementation,
-//   apiKey: '9b39cc6849a4473cbfd9fa121cf8df27', // for Mapquest, OpenCage, Google Premier
-//   formatter: null // 'gpx', 'string', ...
-// };
- 
-// const geocoder = NodeGeocoder(options);
+import twitterLogo from "../images/PNG Twitter Map Marker.png"
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
@@ -27,27 +16,6 @@ export default class Map extends Component {
   componentDidMount() {
     console.log(this.props.locationMap); 
   }
-
-  // conponentDidUpdate(prevProps) {
-  //   if (prevProps.locationMap !== this.props.locationMap) {
-  //     this.makeMarkers()
-  //   }
-  // }
-
-  // // locationMap = this.props.locationMap
-  // markers = []
-
-  // makeMarkers = async () => {
-  //   markers = []
-  //   Object.entries(this.props.locationMap).forEach( async (entry) => {
-  //     const [country, count] = entry 
-  //     const res = await geocoder.geocode(country)
-  //     const lat = res.latitude
-  //     const long = res.longitude
-  //     this.markers.push({markerOffset: 15, name: country, coordinates: [lat, long], count:count})
-  //   })
-  //   console.log(this.markers);
-  // }
 
   render() {
     const MapChart = () => {
@@ -79,15 +47,17 @@ export default class Map extends Component {
                 strokeLinejoin="round"
                 transform="translate(-12, -24)"
               >
-                <circle cx="12" cy="10" r="3" />
-                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />
+                {/* <img src={twitterLogo}></img> */}
+                <img src={"http://s.cdpn.io/3/kiwi.svg"}/>
+                {/* <circle cx="12" cy="10" r="3"><image src={twitterLogo}></image></circle> */} 
+                {/* <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z" />*/}
               </g>
               <text
                 textAnchor="middle"
                 y={markerOffset}
                 style={{ fontFamily: "system-ui", fill: "#5D5A6D" }}
               >
-                {name}
+                {/* {name} */}
               </text>
             </Marker>
           ))}
