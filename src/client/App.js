@@ -59,14 +59,9 @@ export default class App extends Component {
             </div>
             <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
           </div>
-          <div>
-            <OtherHashtags />
-          </div>
-          <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
-        </div>
         <div>
           <OtherHashtags getTweets={this.getTweets} />
-
+        </div>
         </div>
       );
     } else {
