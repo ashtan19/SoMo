@@ -1,0 +1,13 @@
+.loadingBackground {
+  width: 100vw;
+  height: 100vw;
+  background-color: black;
+}
+.loading {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+}
