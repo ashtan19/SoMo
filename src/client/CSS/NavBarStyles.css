@@ -1,0 +1,21 @@
+.nav-bar-container {
+  width: 100%;
+}
+
+.nav-bar-background {
+  background-color: #65dabe;
+  height: 6em;
+  display: flex;
+  align-items: center;
+}
+
+.ant-input {
+  font-family: "Roboto-Bold";
+  letter-spacing: 0.3em;
+  font-size: 0.75em;
+  color: rgba(67, 174, 148, 1) !important;
+}
+
+.ant-input::placeholder {
+  color: rgba(67, 174, 148, 0.5) !important;
+}

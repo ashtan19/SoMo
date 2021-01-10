@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../CSS/MainInfoStyles.css";
-import { Menu, Dropdown, Button } from "antd";
+import { Row, Col } from "antd";
 import "antd/dist/antd.css";
 // import {Api} from "../apis/apis"
 import axios from "axios";
@@ -32,14 +32,10 @@ export default class MainInfo extends Component {
     }
     return (
       <div className="main-info-container">
-        <div className="main-hashtag">
-          <div>{mainhashtag}</div>
-        </div>
-        <div className="main-description">{desc}</div>
-        <div className="learn-more-button">
-          <div>Learn more</div>
-        </div>
-        <Button onClick={this.getTweets}>Get tweets</Button>
+        <Row className="main-hashtag">{mainhashtag}</Row>
+        <Row className="main-description">{desc}</Row>
+        <Row className="learn-more-button">Learn more</Row>
+        <Row className="line-separator" />
       </div>
     );
   }
