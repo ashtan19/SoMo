@@ -15,6 +15,7 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       tweets: [],
       locationMap: null,
       queryString: "blacklivesmatter",
@@ -38,28 +39,38 @@ export default class App extends Component {
           tweets: response.data.tweets,
           locationMap: response.data.locationMap,
           queryString: queryString,
+          loading: false,
         });
       })
       .catch((e) => console.log(e));
   };
 
   render() {
-    return (
-      <div style={{ paddingBottom: "20em" }}>
-        <div>
-          <NavBar getTweets={this.getTweets} />
-        </div>
-        <div style={{ display: "flex" }}>
+    if (!this.state.loading) {
+      return (
+        <div style={{ paddingBottom: "20em" }}>
           <div>
-            <MainInfo queryString={this.state.queryString} />
-            <Map locationMap={this.state.locationMap} />
+            <NavBar getTweets={this.getTweets} />
+          </div>
+          <div style={{ display: "flex" }}>
+            <div>
+              <MainInfo queryString={this.state.queryString} />
+              <Map locationMap={this.state.locationMap} />
+            </div>
+            <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
+          </div>
+          <div>
+            <OtherHashtags />
           </div>
           <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
         </div>
         <div>
           <OtherHashtags getTweets={this.getTweets} />
+
         </div>
-      </div>
-    );
+      );
+    } else {
+      return <h1>LOADING!</h1>;
+    }
   }
 }
