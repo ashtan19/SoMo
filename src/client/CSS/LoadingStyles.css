@@ -1,6 +1,6 @@
 .loadingBackground {
   width: 100vw;
-  height: 100vw;
+  height: 100vh;
   background-color: rgba(67, 174, 148, 1) !important;
 }
 
@@ -11,4 +11,5 @@
   width: 600px;
   height: auto;
   transform: translate(-50%, -50%);
+  overflow-x: hidden;
 }
