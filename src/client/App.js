@@ -10,7 +10,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{ paddingBottom: "20em" }}>
         <div>
           <NavBar />
         </div>
