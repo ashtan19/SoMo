@@ -7,6 +7,9 @@
   height: 6em;
   display: flex;
   align-items: center;
+  border-bottom: solid;
+  border-width: 0.2em;
+  border-color: #e5e5e5;
 }
 
 .ant-input {

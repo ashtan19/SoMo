@@ -1,4 +1,42 @@
+.other-hashtags {
+  display: inline-flex;
+  margin: 0.2em;
+}
+
+.other-hashtag {
+  font-size: 0.7em;
+  border-style: solid;
+  border-radius: 5em;
+  border-color: #ff6a8e;
+  background-color: #ff6a8e;
+  color: white;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-right: 0.7em;
+  padding-left: 0.7em;
+}
+
+.other-hashtag:hover {
+  border-color: #ff6a8e;
+  background-color: white;
+  color: #ff6a8e;
+}
+
 .other-hashtags-container {
   margin-left: 4em;
   margin-right: 4em;
+}
+
+.divider {
+  width: 100%;
+  border-bottom: solid;
+  border-width: 0.09em;
+  border-color: #e5e5e5;
+}
+
+.other-tags-title {
+  font-size: 1.1em;
+  color: #5e5e5e;
+  margin-top: 1em;
+  margin-bottom: 0.8em;
 }
