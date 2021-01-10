@@ -131,7 +131,7 @@ Router.get("/search", async (req, res) => {
       tweets: filteredTweets,
       locationMap: locationMap,
     };
-
+    res.header("Access-Control-Allow-Origin", "*")
     res.status(200).send(responseObject);
   } catch (error) {
     console.log(error);

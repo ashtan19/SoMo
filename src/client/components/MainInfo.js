@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "../CSS/MainInfoStyles.css";
-import { Row, Col } from "antd";
+import { Row, Col, Button } from "antd";
 import "antd/dist/antd.css";
-// import {Api} from "../apis/apis"
+import {Api} from "../apis/apis"
 import axios from "axios";
 
 
@@ -17,8 +17,13 @@ const description =
 export default class MainInfo extends Component {
   componentDidMount() {}
 
+  useApi = async () => {
+    const tweets = await Api.getTopTweets("worldcleanupday")
+    console.log(tweets);
+  }
+
   getTweets = async () => {
-    backendBaseURL.get(`/twitter/search?queryString=worldcleanupday&minActivity=10&maxLoop=3`).then((response) => {
+    backendBaseURL.get(`/twitter/search?queryString=blacklivesmatter&minActivity=10&maxLoop=3`).then((response) => {
       console.log("Top Tweets: ", response.data);
     }).catch(e => console.log(e))
   }
@@ -34,8 +39,9 @@ export default class MainInfo extends Component {
       <div className="main-info-container">
         <Row className="main-hashtag">{mainhashtag}</Row>
         <Row className="main-description">{desc}</Row>
-        <Row className="learn-more-button">Learn more</Row>
+        <Row className="learn-more-button">Learn more </Row>
         <Row className="line-separator" />
+        <Button onClick={this.getTweets}>hello</Button>
       </div>
     );
   }
