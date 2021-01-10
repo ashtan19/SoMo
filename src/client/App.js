@@ -36,7 +36,7 @@ export default class App extends Component {
       .get(
         "/twitter/search?queryString=" +
           queryString +
-          "&minActivity=200&maxLoop=10"
+          "&minActivity=5&maxLoop=10"
       )
       .then((response) => {
         console.log("Top Tweets: ", response.data);
