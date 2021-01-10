@@ -20,7 +20,7 @@ export default class NavBar extends Component {
   componentDidMount() {}
 
   onSearch = (value) => {
-    this.props.getTweets(value);
+    this.props.getTweets(value.replace("#", ""));
   };
 
   render() {
