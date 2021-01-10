@@ -74,7 +74,7 @@ export default class Map extends Component {
                 {name}
               </text>
             </Marker> */}
-          ))}
+          ))
         </ComposableMap>
       );
     };
