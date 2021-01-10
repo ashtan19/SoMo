@@ -8,10 +8,15 @@ import {
   Marker,
 } from "react-simple-maps";
 import twitterLogo from "../images/PNG Twitter Map Marker.png"
+import ReactTooltip from "react-tooltip";
+
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
+const setTooltipContent = (contentString) => {
+
+}
 export default class Map extends Component {
   componentDidMount() {
     console.log(this.props.locationMap); 
@@ -20,7 +25,9 @@ export default class Map extends Component {
   render() {
     const MapChart = () => {
       return (
+        
         <ComposableMap
+          data-tip=""
           projectionConfig={{
             scale: 155,
           }}
@@ -33,12 +40,28 @@ export default class Map extends Component {
                   geography={geo}
                   fill="#65dabe"
                   stroke="white"
+                  // onMouseEnter={() => {
+                  //   const { NAME, POP_EST } = geo.properties;
+                  //   // this.props.setToolTipContent(`${NAME}`);
+                  // }}
+                  // onMouseLeave={() => {
+                  //   // this.props.setToolTipContent("");
+                  // }}
                 />
               ))
             }
           </Geographies>
-          {this.props.locationMap && this.props.locationMap.map(({ name, coordinates, markerOffset }) => (
-            <Marker key={name} coordinates={coordinates}>
+          {this.props.locationMap && this.props.locationMap.map(({ name, coordinates, markerOffset, count }) => (
+            <Marker 
+              key={name} 
+              coordinates={coordinates}
+              onMouseEnter={() => {
+                this.props.setToolTipContent(`${name} — ${count}`);
+              }}
+              onMouseLeave={() => {
+                this.props.setToolTipContent("");
+              }}
+            >
               <g transform="translate(-12, -30)">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

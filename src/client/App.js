@@ -7,6 +7,8 @@ import "./index.css";
 import axios from "axios";
 import { TweetsDisplay } from "./components/TweetsDisplay";
 import { Loading } from "./components/Loading";
+import ReactTooltip from "react-tooltip";
+
 
 const backendBaseURL = axios.create({
   baseURL: "http://localhost:8080",
@@ -24,7 +26,15 @@ export default class App extends Component {
       tweets: [],
       locationMap: null,
       queryString: "blacklivesmatter",
+      content: ""
     };
+    this.setContent = this.setContent.bind(this)
+  }
+
+  setContent(contentString) {
+    this.setState({
+      content: contentString
+    })
   }
 
   componentDidMount() {
@@ -60,7 +70,9 @@ export default class App extends Component {
           <div style={{ display: "flex" }}>
             <div>
               <MainInfo queryString={this.state.queryString} />
-              <Map locationMap={this.state.locationMap} />
+              <Map locationMap={this.state.locationMap} setToolTipContent={this.setContent}/>
+              {/* <ReactTooltip>{this.state.content}</ReactTooltip> */}
+              <span>{this.state.content}</span>
             </div>
             <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
           </div>
