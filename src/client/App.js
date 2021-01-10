@@ -6,6 +6,7 @@ import OtherHashtags from "./components/OtherHashtags";
 import "./index.css";
 import axios from "axios";
 import { TweetsDisplay } from "./components/TweetsDisplay";
+import { Loading } from "./components/Loading";
 
 const backendBaseURL = axios.create({
   baseURL: "http://localhost:8080",
@@ -31,7 +32,7 @@ export default class App extends Component {
       .get(
         "/twitter/search?queryString=" +
           queryString +
-          "&minActivity=0&maxLoop=1"
+          "&minActivity=50&maxLoop=5"
       )
       .then((response) => {
         console.log("Top Tweets: ", response.data);
@@ -59,13 +60,13 @@ export default class App extends Component {
             </div>
             <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
           </div>
-        <div>
-          <OtherHashtags getTweets={this.getTweets} />
-        </div>
+          <div>
+            <OtherHashtags getTweets={this.getTweets} />
+          </div>
         </div>
       );
     } else {
-      return <h1>LOADING!</h1>;
+      return <Loading></Loading>;
     }
   }
 }

@@ -1,6 +1,8 @@
 .tweets-container {
-  width: 40vw;
+  width: 30vw;
   max-height: 60vw;
   overflow: scroll;
-  margin-left: 20px;
+  margin-left: 5vw;
+  margin-right: 4em;
+  margin-top: 2.5em;
 }
