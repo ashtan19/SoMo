@@ -7,31 +7,47 @@ import {
   Geography,
   Marker,
 } from "react-simple-maps";
+// const NodeGeocoder = require('node-geocoder');
+
+// const options = {
+//   provider: 'opencage',
+ 
+//   // Optional depending on the providers
+//   fetch: customFetchImplementation,
+//   apiKey: '9b39cc6849a4473cbfd9fa121cf8df27', // for Mapquest, OpenCage, Google Premier
+//   formatter: null // 'gpx', 'string', ...
+// };
+ 
+// const geocoder = NodeGeocoder(options);
 
 const geoUrl =
   "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-110m.json";
 
-const markers = [
-  {
-    markerOffset: -30,
-    name: "Buenos Aires",
-    coordinates: [-58.3816, -34.6037],
-  },
-  { markerOffset: 15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
-  { markerOffset: 15, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
-  { markerOffset: 15, name: "Santiago", coordinates: [-70.6693, -33.4489] },
-  { markerOffset: 15, name: "Bogota", coordinates: [-74.0721, 4.711] },
-  { markerOffset: 15, name: "Quito", coordinates: [-78.4678, -0.1807] },
-  { markerOffset: -30, name: "Georgetown", coordinates: [-58.1551, 6.8013] },
-  { markerOffset: -30, name: "Asuncion", coordinates: [-57.5759, -25.2637] },
-  { markerOffset: 15, name: "Paramaribo", coordinates: [-55.2038, 5.852] },
-  { markerOffset: 15, name: "Montevideo", coordinates: [-56.1645, -34.9011] },
-  { markerOffset: 15, name: "Caracas", coordinates: [-66.9036, 10.4806] },
-  { markerOffset: 15, name: "Lima", coordinates: [-77.0428, -12.0464] },
-];
-
 export default class Map extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(this.props.locationMap); 
+  }
+
+  // conponentDidUpdate(prevProps) {
+  //   if (prevProps.locationMap !== this.props.locationMap) {
+  //     this.makeMarkers()
+  //   }
+  // }
+
+  // // locationMap = this.props.locationMap
+  // markers = []
+
+  // makeMarkers = async () => {
+  //   markers = []
+  //   Object.entries(this.props.locationMap).forEach( async (entry) => {
+  //     const [country, count] = entry 
+  //     const res = await geocoder.geocode(country)
+  //     const lat = res.latitude
+  //     const long = res.longitude
+  //     this.markers.push({markerOffset: 15, name: country, coordinates: [lat, long], count:count})
+  //   })
+  //   console.log(this.markers);
+  // }
 
   render() {
     const MapChart = () => {
@@ -53,7 +69,7 @@ export default class Map extends Component {
               ))
             }
           </Geographies>
-          {/* {markers.map(({ name, coordinates, markerOffset }) => (
+          {this.props.locationMap && this.props.locationMap.map(({ name, coordinates, markerOffset }) => (
             <Marker key={name} coordinates={coordinates}>
               <g
                 fill="none"
@@ -73,8 +89,8 @@ export default class Map extends Component {
               >
                 {name}
               </text>
-            </Marker> */}
-          ))
+            </Marker>
+          ))}
         </ComposableMap>
       );
     };
@@ -86,3 +102,23 @@ export default class Map extends Component {
     );
   }
 }
+
+
+// const markers = [
+//   {
+//     markerOffset: -30,
+//     name: "Buenos Aires",
+//     coordinates: [-58.3816, -34.6037],
+//   },
+//   { markerOffset: 15, name: "La Paz", coordinates: [-68.1193, -16.4897] },
+//   { markerOffset: 15, name: "Brasilia", coordinates: [-47.8825, -15.7942] },
+//   { markerOffset: 15, name: "Santiago", coordinates: [-70.6693, -33.4489] },
+//   { markerOffset: 15, name: "Bogota", coordinates: [-74.0721, 4.711] },
+//   { markerOffset: 15, name: "Quito", coordinates: [-78.4678, -0.1807] },
+//   { markerOffset: -30, name: "Georgetown", coordinates: [-58.1551, 6.8013] },
+//   { markerOffset: -30, name: "Asuncion", coordinates: [-57.5759, -25.2637] },
+//   { markerOffset: 15, name: "Paramaribo", coordinates: [-55.2038, 5.852] },
+//   { markerOffset: 15, name: "Montevideo", coordinates: [-56.1645, -34.9011] },
+//   { markerOffset: 15, name: "Caracas", coordinates: [-66.9036, 10.4806] },
+//   { markerOffset: 15, name: "Lima", coordinates: [-77.0428, -12.0464] },
+// ];

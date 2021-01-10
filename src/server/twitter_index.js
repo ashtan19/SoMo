@@ -9,14 +9,18 @@ const twitterURL = axios.create({
   headers: { Authorization: `Bearer ${keys.bearer}` },
 });
 
-// twitterURL.defaults.headers.common = {'Authorization': `Bearer ${keys.bearer}`}
+// const NodeGeocoder = require('node-geocoder');
 
-// const config = {
-//   headers: {Authorization : `Bearer ${keys.bearer}`}
-// }
-// const bodyParameters = {
-//   key: "value"
+// const options = {
+//   provider: 'opencage',
+ 
+//   // Optional depending on the providers
+//   fetch: customFetchImplementation,
+//   apiKey: '9b39cc6849a4473cbfd9fa121cf8df27', // for Mapquest, OpenCage, Google Premier
+//   formatter: null // 'gpx', 'string', ...
 // };
+ 
+// const geocoder = NodeGeocoder(options);
 
 Router.get("/top", async (req, res) => {
   try {
@@ -91,40 +95,46 @@ Router.get("/search", async (req, res) => {
       " loops"
     );
 
-    let locationMap = {};
+    let locationMap = [];
 
     if (req.query.queryString === "blacklivesmatter") {
-      locationMap.Switzerland = 71700;
-      locationMap.NewZealand = 104900;
-      locationMap.Austria = 158900;
-      locationMap.Nigera = 164900;
-      locationMap.Italy = 170300;
-      locationMap.Germany = 169200;
-      locationMap.Uk = 146900;
-      locationMap.Sweden = 132900;
-      locationMap.Ireland = 130700;
-      locationMap.Netherlands = 129100;
-      locationMap.DominicanRepublic = 123700;
-      locationMap.Ghana = 116900;
-      locationMap.PuertoRico = 20600;
-      locationMap.France = 160900;
-      locationMap.SouthAfrica = 132900;
-      locationMap.Australia = 87800;
-      locationMap.USA = 20600;
-      locationMap.Kenya = 123700;
+      locationMap = [
+        { markerOffset: 15, name: "Switzerland", coordinates: [8.2319736, 46.7985624], count: 71700},
+        { markerOffset: 15, name: "New Zealand", coordinates: [172.8344077, -41.5000831], count: 104900},
+        { markerOffset: 15, name: "Austria", coordinates: [13.199959, 47.2000338], count: 158900},
+        { markerOffset: 15, name: "Nigera", coordinates: [9.3238432, 17.7356214], count: 164900},
+        { markerOffset: 15, name: "Italy", coordinates: [12.674297, 42.6384261], count: 170300},
+        { markerOffset: 15, name: "Germany", coordinates: [10.4234469, 51.0834196], count: 169200},
+        { markerOffset: 15, name: "Uk", coordinates: [-3.2765753, 54.7023545], count: 146900},
+        { markerOffset: 15, name: "Sweden", coordinates: [14.5208584, 59.6749712], count: 132900},
+        { markerOffset: 15, name: "Ireland", coordinates: [-7.9794599, 52.865196], count: 130700},
+        { markerOffset: 15, name: "Netherlands", coordinates: [5.7480821, 52.5001698], count: 129100},
+        { markerOffset: 15, name: "DominicanRepublic", coordinates: [-70.3028026, 19.0974031], count: 123700},
+        { markerOffset: 15, name: "Ghana", coordinates: [-1.0800271, 8.0300284], count: 116900},
+        { markerOffset: 15, name: "PuertoRico", coordinates: [-66.4132818, 18.2214149], count: 20600},
+        { markerOffset: 15, name: "France", coordinates: [1.8883335, 46.603354], count: 160900},
+        { markerOffset: 15, name: "SouthAfrica", coordinates: [24.991639, -28.8166236], count: 132900},
+        { markerOffset: 15, name: "Australia", coordinates: [134.755, -24.7761086], count: 87800},
+        { markerOffset: 15, name: "USA", coordinates: [-100.4458825, 39.7837304], count: 20600},
+        { markerOffset: 15, name: "Kenya", coordinates: [38.4313975, 1.4419683], count: 123700}
+      ]
     } else if (req.query.queryString === "farmersprotest") {
-      locationMap.UAE = 48100;
-      locationMap.India = 137500;
-      locationMap.Singapore = 144700;
-      locationMap.Pakistan = 157300;
+      locationMap = [
+        { markerOffset: 15, name: "UAE", coordinates: [55.1887609, 25.0750095], count: 48100},
+        { markerOffset: 15, name: "India", coordinates: [78.6677428, 22.3511148], count: 137500},
+        { markerOffset: 15, name: "Singapore", coordinates: [103.5666667, 1.1303611], count: 144700},
+        { markerOffset: 15, name: "Pakistan", coordinates: [71.247499, 30.3308401], count: 157300},
+      ]
     } else if (req.query.queryString === "justiceforchristinedacera") {
-      locationMap.Thailand = 543900;
-      locationMap.Malaysia = 545500;
-      locationMap.Phillipines = 531500;
-      locationMap.Singapore = 531500;
-      locationMap.Australia = 475200;
-      locationMap.Qatar = 342300;
-      locationMap.UAE = 324300;
+      locationMap = [
+        { markerOffset: 15, name: "Singapore", coordinates: [103.5666667, 1.1303611], count: 531500},
+        { markerOffset: 15, name: "Australia", coordinates: [134.755, -24.7761086], count: 475200},
+        { markerOffset: 15, name: "UAE", coordinates: [55.1887609, 25.0750095], count: 324300},
+        { markerOffset: 15, name: "Thailand", coordinates: [100.83273, 14.8971921], count: 543900},
+        { markerOffset: 15, name: "Malaysia", coordinates: [102.2656823, 4.5693754], count: 545500},
+        { markerOffset: 15, name: "Philippines", coordinates: [122.7312101, 12.7503486], count: 158900},
+        { markerOffset: 15, name: "Qatar", coordinates: [51.2295295, 25.3336984], count: 342300},
+      ]
     }
 
     let responseObject = {
