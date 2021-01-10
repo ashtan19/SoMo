@@ -5,6 +5,7 @@ import Map from "./components/Map";
 import OtherHashtags from "./components/OtherHashtags";
 import "./index.css";
 import axios from "axios";
+import { TweetsDisplay } from "./components/TweetsDisplay";
 
 const backendBaseURL = axios.create({
   baseURL: "http://localhost:8080",
@@ -48,9 +49,12 @@ export default class App extends Component {
         <div>
           <NavBar getTweets={this.getTweets} />
         </div>
-        <div>
-          <MainInfo queryString={this.state.queryString} />
-          <Map locationMap={this.state.locationMap} />
+        <div style={{ display: "flex" }}>
+          <div>
+            <MainInfo queryString={this.state.queryString} />
+            <Map locationMap={this.state.locationMap} />
+          </div>
+          <TweetsDisplay tweets={this.state.tweets}></TweetsDisplay>
         </div>
         <div>
           <OtherHashtags />
