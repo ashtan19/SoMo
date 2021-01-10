@@ -1,25 +1,32 @@
-.container {
+.main-info-container {
   width: 55%;
+  height: 16em;
+  margin-left: 4%;
+  margin-top: 7%;
+  border-bottom: solid;
+  border-width: 0.09em;
+  border-color: #e5e5e5;
 }
 
 .main-hashtag {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-family: "Roboto-Black";
 }
 
 .main-description {
-  font-size: 0.65em;
+  font-size: 0.9em;
   margin-top: 1em;
+  font-family: "Roboto-Medium";
 }
 
-.learn-more-botton {
+.learn-more-button {
   float: right;
   margin-top: 1em;
 }
 
-.learn-more-botton {
+.learn-more-button {
   font-family: "Roboto-Medium";
-  font-size: 0.55em;
+  font-size: 0.7em;
   color: #5e5e5e;
   border-style: solid;
   border-width: 0.3em;
@@ -32,11 +39,11 @@
   padding-bottom: 0.3em;
 }
 
-.learn-more-botton:hover {
+.learn-more-button:hover {
   border-color: #65dabe;
-  color: #65dabe;
   border-style: solid;
   border-width: 0.3em;
   border-radius: 20em;
   background-color: white;
+  cursor: pointer;
 }

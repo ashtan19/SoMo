@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../CSS/MainInfoStyles.css";
 import { Menu, Dropdown, Button } from "antd";
+import "antd/dist/antd.css";
 
 const mainhashtag = "#BLM";
 const description =
@@ -17,12 +18,12 @@ export default class MainInfo extends Component {
       var desc = description;
     }
     return (
-      <div className="container">
+      <div className="main-info-container">
         <div className="main-hashtag">
           <div>{mainhashtag}</div>
         </div>
         <div className="main-description">{desc}</div>
-        <div className="learn-more-botton">
+        <div className="learn-more-button">
           <div>Learn more</div>
         </div>
       </div>
