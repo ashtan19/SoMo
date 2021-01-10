@@ -2,6 +2,13 @@ import React, { Component } from "react";
 import "../CSS/MainInfoStyles.css";
 import { Menu, Dropdown, Button } from "antd";
 import "antd/dist/antd.css";
+// import {Api} from "../apis/apis"
+import axios from "axios";
+
+
+const backendBaseURL  = axios.create({
+    baseURL: "http://localhost:8080",
+});
 
 const mainhashtag = "#BLM";
 const description =
@@ -9,6 +16,12 @@ const description =
 
 export default class MainInfo extends Component {
   componentDidMount() {}
+
+  getTweets = async () => {
+    backendBaseURL.get(`/twitter/search?queryString=worldcleanupday&minActivity=10&maxLoop=3`).then((response) => {
+      console.log("Top Tweets: ", response.data);
+    }).catch(e => console.log(e))
+  }
 
   render() {
     // maximum length of string must be .. characters long, replace rest with "..."
@@ -26,6 +39,7 @@ export default class MainInfo extends Component {
         <div className="learn-more-button">
           <div>Learn more</div>
         </div>
+        <Button onClick={this.getTweets}>Get tweets</Button>
       </div>
     );
   }
