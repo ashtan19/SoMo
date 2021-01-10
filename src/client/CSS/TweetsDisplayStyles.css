@@ -26,14 +26,15 @@
 .social-media-logo {
   height: 3em;
   width: 3em;
+  margin-left: 1em;
+  margin-right: 1em;
 }
 
 .social-media-links-container {
   display: flex;
-  justify-content: space-around;
-  margin-left: 13em;
-  margin-right: 13em;
+  justify-content: center;
   margin-top: 4em;
+  margin-right: 4em;
 }
 
 .social-media-logo:hover {
