@@ -14,14 +14,14 @@ const BLMdescription =
   "Black Lives Matter (BLM) is a decentralized political and social movement advocating for non-violent civil disobedience in protest against incidents of police brutality and all racially motivated violence against black people. While there are specific organizations like the Black Lives Matter Global Network that label themselves simply as 'Black Lives Matter', the Black Lives Matter movement comprises a broad array of people and organizations. The slogan 'Black Lives Matter' itself remains untrademarked by any group. The broader movement and its related organizations typically advocate against police violence towards black people as well as for various other policy changes considered to be related to black liberation.";
 
 const FPmainhashtag = "#FarmersProtest";
-const FPdescription = "FPdescription";
+const FPdescription =
+  "The 2020 Indian farmers' protest is an ongoing protest against the three farm acts which were passed by the Parliament of India in September 2020. The acts have been described as anti-farmer laws by many farmer unions, and politicians from the opposition also say it would leave farmers at the mercy of corporates. The government, however, maintains that they will make it effortless for farmers to sell their produce directly to big buyers, and stated that the protests are based on misinformation.";
+
 const Jmainhashtag = "#JusticeForChristineDacera";
 const Jdescription =
   "Flight attendant Christine Dacera's death reignited debates on women, drinking and rape. She is the new rallying point for tens of thousands calling for justice, but to her friends, she is simply Ica. The 23-year-old was 'more than just a headline or a cautionary tale. She is a real person, someone we love,' college friend, Jamie Therese Tejada Gundaya, wrote in eulogy. To the people who knew her best, the hashtag #JusticeforChristineDacera is a fight to remember her for the person she was, as much as it is a fight for justice.";
 
 export default class MainInfo extends Component {
-
-  
   componentDidMount() {}
 
   render() {
