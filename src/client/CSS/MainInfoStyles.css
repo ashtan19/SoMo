@@ -1,5 +1,5 @@
 .main-info-container {
-  width: 55%;
+  width: 60%;
   margin-left: 4em;
   margin-top: 2.5em;
 }
@@ -13,7 +13,7 @@
 }
 
 .main-hashtag {
-  font-size: 1.5em;
+  font-size: 2.1em;
   font-family: "Roboto-Black";
 }
 
@@ -21,27 +21,29 @@
   font-size: 0.9em;
   margin-top: 1em;
   font-family: "Roboto-Medium";
+  color: #5e5e5e;
 }
 
 .learn-more-button {
   float: right;
   margin-top: 1em;
   font-family: "Roboto-Bold";
-  font-size: 0.7em;
-  color: #5e5e5e;
+  font-size: 0.75em;
+  color: white;
   border-style: solid;
   border-width: 0.3em;
   border-radius: 20em;
-  border-color: #e5e5e5;
-  background-color: #e5e5e5;
-  padding-left: 0.6em;
-  padding-right: 0.6em;
+  border-color: #65dabe;
+  background-color: #65dabe;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
 }
 
 .learn-more-button:hover {
   border-color: #65dabe;
+  color: #5e5e5e;
   border-style: solid;
   border-width: 0.3em;
   border-radius: 20em;
