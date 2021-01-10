@@ -77,7 +77,7 @@ export default class App extends Component {
         </div>
       );
     } else {
-      return <Loading></Loading>;
+      return <Loading />;
     }
   }
 }
