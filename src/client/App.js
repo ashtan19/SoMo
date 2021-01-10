@@ -6,29 +6,51 @@ import OtherHashtags from "./components/OtherHashtags";
 import "./index.css";
 import axios from "axios";
 
-
-const backendBaseURL  = axios.create({
-    baseURL: "http://localhost:8080",
+const backendBaseURL = axios.create({
+  baseURL: "http://localhost:8080",
 });
 
 export default class App extends Component {
-  componentDidMount() {}
-
-  getTweets = async () => {
-    backendBaseURL.get(`/twitter/search?queryString=worldcleanupday&minActivity=10&maxLoop=3`).then((response) => {
-      console.log("Top Tweets: ", response.data);
-    }).catch(e => console.log(e))
+  constructor(props) {
+    super(props);
+    this.state = {
+      tweets: [],
+      locationMap: null,
+      queryString: "blacklivesmatter",
+    };
   }
+
+  componentDidMount() {
+    this.getTweets("blacklivesmatter");
+  }
+
+  getTweets = async (queryString) => {
+    backendBaseURL
+      .get(
+        "/twitter/search?queryString=" +
+          queryString +
+          "&minActivity=0&maxLoop=1"
+      )
+      .then((response) => {
+        console.log("Top Tweets: ", response.data);
+        this.setState({
+          tweets: response.data.tweets,
+          locationMap: response.data.locationMap,
+          queryString: queryString,
+        });
+      })
+      .catch((e) => console.log(e));
+  };
 
   render() {
     return (
       <div>
         <div>
-          <NavBar />
+          <NavBar getTweets={this.getTweets} />
         </div>
         <div>
-          <MainInfo />
-          <Map />
+          <MainInfo queryString={this.state.queryString} />
+          <Map locationMap={this.state.locationMap} />
         </div>
         <div>
           <OtherHashtags />

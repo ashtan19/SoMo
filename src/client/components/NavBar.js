@@ -16,10 +16,12 @@ const suffix = (
   />
 );
 
-const onSearch = (value) => console.log(value);
-
 export default class NavBar extends Component {
   componentDidMount() {}
+
+  onSearch = (value) => {
+    this.props.getTweets(value);
+  };
 
   render() {
     return (
@@ -28,7 +30,7 @@ export default class NavBar extends Component {
           <Search
             placeholder="search #hashtags"
             allowClear
-            onSearch={onSearch}
+            onSearch={this.onSearch}
             style={{
               width: "35%",
               marginLeft: "63%",
