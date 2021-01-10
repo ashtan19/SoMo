@@ -1,20 +1,25 @@
 import React, { Component } from "react";
+import { animateScroll as scroll } from "react-scroll";
 import "../CSS/OtherHashtagsStyles.css";
 import "antd/dist/antd.css";
-import { Row, Col } from "antd";
 
 const hashtags = [
-  "#COVID19",
-  "#Global Warming",
-  "#Human Rights",
+  "#covid19",
+  "#globalwarming",
+  "#humanrights",
   "#LGBTQ+",
-  "#Feminism",
-  "#Freedom Of Speech",
-  "#Racism",
-  "#Farmer's Protests",
-  "#Pipeline Protests",
-  "#Health Care",
+  "#feminism",
+  "#justiceforchristinedacera",
+  "#freedomofspeech",
+  "#racism",
+  "#farmerprotests",
+  "#pipelineprotests",
+  "#healthcare",
 ];
+
+function scrollToTop() {
+  scroll.scrollToTop();
+}
 
 export default class OtherHashtags extends Component {
   componentDidMount() {}
@@ -23,10 +28,19 @@ export default class OtherHashtags extends Component {
     const tags = hashtags.map((t) => {
       return (
         <div className="other-hashtags">
-          <div className="other-hashtag">{t}</div>
+          <button
+            onClick={() => {
+              scrollToTop();
+              this.props.getTweets("justiceforchristinedacera");
+            }}
+            className="other-hashtag"
+          >
+            {t}
+          </button>
         </div>
       );
     });
+
     return (
       <div className="other-hashtags-container">
         <div className="divider" />
