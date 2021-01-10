@@ -1,13 +1,13 @@
 .loadingBackground {
   width: 100vw;
   height: 100vw;
-  background-color: black;
+  background-color: rgba(67, 174, 148, 1) !important;
 }
 .loading {
   position: fixed;
   top: 50%;
   left: 50%;
   width: 600px;
-  height: 300px;
+  height: 250px;
   transform: translate(-50%, -50%);
 }
